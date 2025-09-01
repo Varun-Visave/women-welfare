@@ -1,0 +1,118 @@
+.footer {
+  background-color: white;
+  border-top: 1px solid #e5e7eb; /* gray-200 */
+  text-align: center;   
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.footer-logo-img {
+  height: 4rem;
+  width: auto;
+}
+
+.footer-logo-text {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.footer-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-contact h3,
+.footer-social h3 {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600;
+}
+
+.highlight {
+  color: #ec4899; /* pink-500 */
+}
+
+.footer-contact p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.footer-mandala img {
+  width: 10rem;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+/* Social button colors */
+.social.facebook {
+  background-color: #1877f2;
+}
+.social.facebook:hover {
+  background-color: #145dbf;
+}
+
+.social.twitter {
+  background-color: #000000;
+}
+.social.twitter:hover {
+  background-color: #333333;
+}
+
+.social.instagram {
+  background-color: #ec4899;
+}
+.social.instagram:hover {
+  background-color: #db2777;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .footer-contact {
+    text-align: left;
+  }
+
+  .footer-social {
+    text-align: right;
+  }
+
+  .footer-mandala img {
+    width: 15rem;
+  }
+}

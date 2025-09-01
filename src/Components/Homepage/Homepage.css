@@ -1,0 +1,155 @@
+.events-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  padding: 1rem;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.event-card:hover {
+  transform: translateY(-4px);
+}
+
+.event-date {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.event-content {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.event-image {
+  width: 350px;
+  height: 350px;
+  border-radius: 8px;
+  border-color: black;
+  border-width: 1px;
+  object-fit: cover;
+}
+
+.event-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.event-text p {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.event-details {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.event-link {
+  font-size: 0.9rem;
+  color: #0077cc;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.event-link:hover {
+  text-decoration: underline;
+}
+
+.blog-card {
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+}
+
+.blog-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1rem;
+}
+
+.blog-content h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 1em;
+}
+
+.more-text {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.info-btn {
+  margin-top: 0.75rem;
+  background: #ff4081;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.info-btn:hover {
+  background: #e63670;
+}
+
+.blog-section {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.about-intro {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.8;
+  text-align: center;
+  color: #333;
+  max-width: 900px;
+  margin: 5rem auto;
+  padding: 0 1rem;
+}
