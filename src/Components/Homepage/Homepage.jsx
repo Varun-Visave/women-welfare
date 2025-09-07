@@ -6,6 +6,18 @@ import "./Homepage.css";
 import RightTitleSection from "../RightTitleSection/RightTitleSection";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
+
+  const CalendarEvents = [
+    { title: "Women Empowerment Workshop", date: "2025-09-10" },
+    {
+      title: "Community Awareness Drive",
+      date: "2025-09-15",
+      color: "#d65a84",
+    },
+  ];
 
 const events = [
   {
@@ -40,81 +52,81 @@ const events = [
     id: 4,
     date: "19th August 2025",
     title: "Nagpur Region – Gadchiroli District Workshop",
-    img: "gadchiroli meeting.png",
+    img: "Gadchiroli meeting.png",
     link: "#",
     details:
       "‘Vichar Manthan’ workshop on women’s issues organized by Gadchiroli district MSMP. Senior social worker Sumtibai Munghate was present as chief guest.",
   },
-  {
-    id: 5,
-    date: "8th March 2025",
-    title: "Marathwada Region – Parbhani International Women’s Day Program",
-    img: "parbhani 8th march program.png",
-    link: "#",
-    details:
-      "A cultural and activist event held in Parbhani on International Women’s Day with wide participation from the community.",
-  },
-  {
-    id: 6,
-    date: "2025",
-    title: "Kolhapur Regional Meeting",
-    img: "kolhapur team.png",
-    link: "#",
-    details:
-      "Regional workshop and conference of MSMP Kolhapur team, part of the calendar of regional workshops across Maharashtra.",
-  },
-  {
-    id: 7,
-    date: "March – August 2025",
-    title: "Campaign: No to Manusmruti, Yes to Samvidhan",
-    img: "manusmruti nako banner.png",
-    link: "#",
-    details:
-      "Workshops and discussions across Maharashtra defending constitutional values and resisting Manusmruti ideology. Events held in Mumbai (29 Mar), Chiplun (9 May), Kudal (11 May), Online (8 Jun), Vashi (22 Jul), Majalgaon (3 Aug).",
-  },
-  {
-    id: 8,
-    date: "October 2025",
-    title: "Safety Audit of Public Transport Spaces",
-    img: "safety audit of ambejogai.png",
-    link: "#",
-    details:
-      "Audits conducted at ST stands, bus depots, and railway stations across Maharashtra. Surveys at Dharashiv, Ambejogai, Pulgaon highlighted gaps in women’s safety. A consolidated report was released in October 2025.",
-  },
-  {
-    id: 9,
-    date: "2025",
-    title: "College Campaign",
-    img: "college campaign.png",
-    link: "#",
-    details:
-      "Youth campaign with intercollegiate competitions, skits, poster contests, documentaries, and panel discussions on themes like dowry, toxic masculinity, democracy, feminism, superstition, and equality.",
-  },
-  {
-    id: 10,
-    date: "May – July 2025",
-    title: "Community Meetings",
-    img: "trade union meet.png",
-    link: "#",
-    details:
-      "Online and offline meetings with men’s groups (May 4), queer and trans activists, trade union representatives, and Muslim women activists (July 13). Discussions on gender equality and feminist struggles.",
-  },
-  {
-    id: 11,
-    date: "20–22 December 2025",
-    title: "State-Level Conference at Yashwantrao Chavan Pratishthan, Mumbai",
-    img: "conference banner.png",
-    link: "#",
-    details:
-      "Grand three-day conference marking the 50th anniversary of International Women’s Year. Resolutions announced and next phase of the feminist movement launched.",
-  },
+  // {
+  //   id: 5,
+  //   date: "8th March 2025",
+  //   title: "Marathwada Region – Parbhani International Women’s Day Program",
+  //   img: "parbhani 8th march program.png",
+  //   link: "#",
+  //   details:
+  //     "A cultural and activist event held in Parbhani on International Women’s Day with wide participation from the community.",
+  // },
+  // {
+  //   id: 6,
+  //   date: "2025",
+  //   title: "Kolhapur Regional Meeting",
+  //   img: "kolhapur team.png",
+  //   link: "#",
+  //   details:
+  //     "Regional workshop and conference of MSMP Kolhapur team, part of the calendar of regional workshops across Maharashtra.",
+  // },
+  // {
+  //   id: 7,
+  //   date: "March – August 2025",
+  //   title: "Campaign: No to Manusmruti, Yes to Samvidhan",
+  //   img: "manusmruti nako banner.png",
+  //   link: "#",
+  //   details:
+  //     "Workshops and discussions across Maharashtra defending constitutional values and resisting Manusmruti ideology. Events held in Mumbai (29 Mar), Chiplun (9 May), Kudal (11 May), Online (8 Jun), Vashi (22 Jul), Majalgaon (3 Aug).",
+  // },
+  // {
+  //   id: 8,
+  //   date: "October 2025",
+  //   title: "Safety Audit of Public Transport Spaces",
+  //   img: "safety audit of ambejogai.png",
+  //   link: "#",
+  //   details:
+  //     "Audits conducted at ST stands, bus depots, and railway stations across Maharashtra. Surveys at Dharashiv, Ambejogai, Pulgaon highlighted gaps in women’s safety. A consolidated report was released in October 2025.",
+  // },
+  // {
+  //   id: 9,
+  //   date: "2025",
+  //   title: "College Campaign",
+  //   img: "college campaign.png",
+  //   link: "#",
+  //   details:
+  //     "Youth campaign with intercollegiate competitions, skits, poster contests, documentaries, and panel discussions on themes like dowry, toxic masculinity, democracy, feminism, superstition, and equality.",
+  // },
+  // {
+  //   id: 10,
+  //   date: "May – July 2025",
+  //   title: "Community Meetings",
+  //   img: "trade union meet.png",
+  //   link: "#",
+  //   details:
+  //     "Online and offline meetings with men’s groups (May 4), queer and trans activists, trade union representatives, and Muslim women activists (July 13). Discussions on gender equality and feminist struggles.",
+  // },
+  // {
+  //   id: 11,
+  //   date: "20–22 December 2025",
+  //   title: "State-Level Conference at Yashwantrao Chavan Pratishthan, Mumbai",
+  //   img: "conference banner.png",
+  //   link: "#",
+  //   details:
+  //     "Grand three-day conference marking the 50th anniversary of International Women’s Year. Resolutions announced and next phase of the feminist movement launched.",
+  // },
 ];
 
 const blogData = [
   {
     id: 1,
     title: "No to Manusmruti, Yes to Sanvidhan",
-    img: "manusmruti-campaign.png",
+    img: "no to manusmruti at Pathardi .png",
     description:
       "Exploring the ongoing feminist campaign resisting Brahminical patriarchy and asserting Constitutional values.",
     moreInfo:
@@ -124,7 +136,7 @@ const blogData = [
   {
     id: 2,
     title: "Safety Audit of Public Transport",
-    img: "safety-audit.png",
+    img: "Safety Audit of Chandrapur railway station.png",
     description:
       "Assessing women’s safety in public spaces like railway stations, ST stands, and bus depots across Maharashtra.",
     moreInfo:
@@ -134,7 +146,7 @@ const blogData = [
   {
     id: 3,
     title: "College Youth Campaign",
-    img: "college-campaign.png",
+    img: "Marathwada region meeting.png",
     description:
       "Engaging young people through skits, poster competitions, film screenings, and discussions on gender equality.",
     moreInfo:
@@ -144,7 +156,7 @@ const blogData = [
   {
     id: 4,
     title: "Zabardasti Me Kaisi Mardangi?",
-    img: "coercive-masculinity.png",
+    img: "Zabardasti me kaisi mardangi banner.png",
     description:
       "A campaign addressing the harmful effects of coercive masculinity and its role in perpetuating violence.",
     moreInfo:
@@ -179,14 +191,24 @@ function BlogCard({ title, img, description, link }) {
 }
 
 function BlogSection() {
+  const displayedBlogs = blogData.slice(0, 4); // Show only first 4 blogs
+
   return (
-    <div className="blog-section">
-      {blogData.map((blog) => (
-        <BlogCard key={blog.id} {...blog} />
-      ))}
-    </div>
+    <>
+      <div className="blog-section-grid">
+        {displayedBlogs.map((blog) => (
+          <BlogCard key={blog.id} {...blog} />
+        ))}
+      </div>
+      <div className="btn-container">
+        <Link to={"/blogs"} className="more-blogs-btn">
+          More Blogs
+        </Link>
+      </div>
+    </>
   );
 }
+
 
 function EventCards() {
   const [expanded, setExpanded] = useState({});
@@ -199,30 +221,37 @@ function EventCards() {
   };
 
   return (
-    <div className="events-container">
-      {events.map((event) => (
-        <div className="event-card" key={event.id}>
-          <div className="event-date">{event.date}</div>
-          <div className="event-content">
-            <img src={event.img} alt={event.title} className="event-image" />
-            <div className="event-text">
-              <p>{event.title}</p>
+    <>
+      <div className="events-container">
+        {events.map((event) => (
+          <div className="event-card" key={event.id}>
+            <div className="event-date">{event.date}</div>
+            <div className="event-content">
+              <img src={event.img} alt={event.title} className="event-image" />
+              <div className="event-text">
+                <p>{event.title}</p>
 
-              {expanded[event.id] && (
-                <p className="event-details">{event.details}</p>
-              )}
+                {expanded[event.id] && (
+                  <p className="event-details">{event.details}</p>
+                )}
 
-              <button
-                className="event-link"
-                onClick={() => toggleExpand(event.id)}
-              >
-                {expanded[event.id] ? "less info..." : "more info..."}
-              </button>
+                <button
+                  className="event-link"
+                  onClick={() => toggleExpand(event.id)}
+                >
+                  {expanded[event.id] ? "less info..." : "more info..."}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <div className="btn-container">
+        <Link to={"/events"} className="more-events-btn">
+          More Events
+        </Link>
+      </div>
+    </>
   );
 }
 
@@ -235,6 +264,16 @@ const Homepage = () => {
         feminist transformation of society—empowering women, challenging
         inequalities, and building a future rooted in justice and equality.
       </div>
+
+      <LeftTitleSection title={"Calendar And Announcements"}/>
+
+      
+      <FullCalendar
+        plugins={[dayGridPlugin, interactionPlugin]}
+        initialView="dayGridMonth"
+        events={CalendarEvents}
+        height="auto"
+      />
       <Impact />
       <LeftTitleSection title={"Voices In Action"} />
       <EventCards />

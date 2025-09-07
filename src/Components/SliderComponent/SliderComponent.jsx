@@ -10,18 +10,18 @@ const ImageSlider = () => {
   const slides = [
     {
       img: "1.png",
-      title: "Event 1 Title",
-      info: "more info …",
+      title: "First meeting at Shramik, Dadar",
+      info: "First gathering of the MSMP committee in September 2024",
     },
     {
       img: "2.png",
-      title: "Event 2 Title",
-      info: "some details …",
+      title: "District-level programme on birth anniversary of Krantijyoti Savitribai Phule",
+      info: "Cultural programs, lectures, and workshops were organized across districts",
     },
     {
       img: "3.png",
-      title: "Event 3 Title",
-      info: "other details …",
+      title: "Sukanu Samiti press conference, Mumbai",
+      info: "Press conference held in Mumbai to highlight local issues and the committee’s action plans",
     },
   ];
 

@@ -9,9 +9,13 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
-const Navbar = () => {
+const Navbar = ({
+  showCalendar,
+  setShowCalendar,
+  showNotice,
+  setShowNotice,
+}) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showCalendar, setShowCalendar] = useState(false);
 
   // Example events for calendar
   const events = [
@@ -65,31 +69,31 @@ const Navbar = () => {
         {/* Nav Links */}
         <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
           <a href="/">HOME</a>
+          <div className="dropdown"></div>
           <div className="dropdown">
-            <a href="#">EVENTS ▾</a>
-            <div className="dropdown-content">
-              <a href="#">Event 1</a>
-              <a href="#">Event 2</a>
-            </div>
+            <a href="/about">ABOUT US</a>
           </div>
-          <div className="dropdown">
-            <a href="#">WHO WE ARE ▾</a>
-            <div className="dropdown-content">
-              <a href="/about">About Us</a>
-              <a href="/about">Team</a>
-            </div>
-          </div>
+          <a href="/events">EVENTS</a>
+          <a href="/blogs">BLOG</a>
+
           <div className="dropdown">
             <a href="#">DOCUMENTATION ▾</a>
             <div className="dropdown-content">
-              <a href="#">Reports</a>
-              <a href="#">Research</a>
+              <a href="#">Page Is Under Development !</a>
             </div>
           </div>
           <div className="dropdown">
             <a href="#">ANNOUNCEMENTS ▾</a>
             <div className="dropdown-content">
-              <a href="#">Notice</a>
+              <a
+                onClick={(e) => {
+                  e.preventDefault();
+                  setShowNotice(true);
+                }}
+              >
+                Notice
+              </a>
+
               <a
                 href="#"
                 onClick={(e) => {
@@ -101,7 +105,6 @@ const Navbar = () => {
               </a>
             </div>
           </div>
-          <a href="/blogs">BLOG</a>
           <a href="#">CONTACT US</a>
           <a href="#">
             <i className="fas fa-search"></i>
@@ -125,6 +128,64 @@ const Navbar = () => {
               events={events}
               height="auto"
             />
+          </div>
+        </div>
+      )}
+
+      {showNotice && (
+        <div className="notice-modal">
+          <div className="notice-content">
+            <button
+              className="notice-close"
+              onClick={() => setShowNotice(false)}
+            >
+              ✕
+            </button>
+            <h1 className="notice-modal-heading">Notices</h1>
+
+            <div className="scrollable">
+              <div className="notice">
+                <div>
+                  <h1 className="notice-heading">
+                    Notice: Mahila Sabha (Women’s Meeting)
+                  </h1>
+                  <p>
+                    All self-help group (SHG) leaders are invited to discuss
+                    upcoming empowerment initiatives and skill development
+                    workshops.
+                  </p>
+                </div>
+                <img src="new-notice.png" className="new-notice-icon" alt="" />
+              </div>
+
+              <div className="notice">
+                <div>
+                  <h1 className="notice-heading">
+                    Notice: Mahila Sabha (Women’s Meeting)
+                  </h1>
+                  <p>
+                    All self-help group (SHG) leaders are invited to discuss
+                    upcoming empowerment initiatives and skill development
+                    workshops.
+                  </p>
+                </div>
+                <img src="new-notice.png" className="new-notice-icon" alt="" />
+              </div>
+
+              <div className="notice">
+                <div>
+                  <h1 className="notice-heading">
+                    Notice: Mahila Sabha (Women’s Meeting)
+                  </h1>
+                  <p>
+                    All self-help group (SHG) leaders are invited to discuss
+                    upcoming empowerment initiatives and skill development
+                    workshops.
+                  </p>
+                </div>
+                <img src="new-notice.png" className="new-notice-icon" alt="" />
+              </div>
+            </div>
           </div>
         </div>
       )}
