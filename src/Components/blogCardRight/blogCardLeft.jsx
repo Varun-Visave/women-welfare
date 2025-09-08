@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import "./BlogCardLeft.css";
 import mandala from "../../assets/mandalaRight.png";
 import Separator from "../Separator/Separator";
+import { Link } from "react-router-dom";
 
-const BlogCardLeft = ({ title, description, date, readTime, image }) => {
-  const [expanded, setExpanded] = useState(false);
-
+const BlogCardLeft = ({ id, title, description, date, readTime, image }) => {
   return (
     <>
       <div className="blog-card">
@@ -23,13 +22,13 @@ const BlogCardLeft = ({ title, description, date, readTime, image }) => {
             <span className="blog-readtime">{readTime}</span>
           </div>
 
-          <p className={`blog-text ${expanded ? "expanded" : "collapsed"}`}>
+          <p className={`blog-text collapsed`}>
             {description}
           </p>
 
-          <button className="read-more" onClick={() => setExpanded(!expanded)}>
-            {expanded ? "Show less →" : "Read now →"}
-          </button>
+          <Link to={`/blog/${id}`} className="read-more" >
+            Read now →
+          </Link>
         </div>
       <img src={mandala} alt="Mandala" className="mandala-right" />
       </div>

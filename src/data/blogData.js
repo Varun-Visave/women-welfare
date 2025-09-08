@@ -12,7 +12,7 @@ const blogData = [
       "A program was organized by the Maharashtra Women Liberation Conference where many women participated. Discussions were held on women’s issues, as well as the role of women in society. The importance of equality and women empowerment was highlighted. The conference also featured cultural events, poster exhibitions, and interactive sessions where women shared their personal stories of struggle and resilience. These dialogues helped in building a sense of solidarity and collective vision for future feminist action.",
     date: "Aug 25, 2025",
     readTime: "5 min read",
-    image: blogImg, 
+    image: "blog-img.png", 
   },
   {
     id: 2,

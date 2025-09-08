@@ -8,6 +8,7 @@ const BlogPage = () => {
       {blogData.map((blog) => (
         <BlogCardLeft
           key={blog.id}
+          id={blog.id}
           title={blog.title}
           description={blog.description}
           date={blog.date}
