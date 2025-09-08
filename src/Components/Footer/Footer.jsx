@@ -23,8 +23,10 @@ const Footer = () => {
             <h3>
               Contact <span className="highlight">Us</span>
             </h3>
-            <p>Phone: 123456789</p>
-            <p>Email: mail@mail.com</p>
+            <p className="phone">Dr. Kunda Pramila Nilakanth: 9969148654</p>
+            <p className="phone">Sangeeta Saraf: 9819230274</p>
+            <p className="phone">Jyoti Mhapasekar: 9867724529</p>
+            <p className="language">Email: streevadiparishad@msmporg.in</p>
           </div>
 
           {/* Mandala Image */}
@@ -46,7 +48,7 @@ const Footer = () => {
               </a>
               <a
                 href="https://www.youtube.com/@MSMPCulture"
-                className="social twitter"
+                className="social youtube"
               >
                 <FaYoutube />
               </a>
@@ -58,6 +60,10 @@ const Footer = () => {
               </a>
             </div>
           </div>
+        </div>
+        <div className="footer-credit">
+          <img src="meshcraft.png" alt="Meshcraft" />
+          <small>made by Meshcraft</small>
         </div>
       </div>
     </footer>

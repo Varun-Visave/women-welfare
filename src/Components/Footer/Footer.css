@@ -1,7 +1,9 @@
 .footer {
   background-color: white;
-  border-top: 1px solid #e5e7eb; /* gray-200 */
-  text-align: center;   
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  padding-bottom: 1rem;
+  position: relative;
 }
 
 .footer-container {
@@ -25,7 +27,7 @@
 }
 
 .footer-logo-text {
-  font-size: 1.125rem; /* text-lg */
+  font-size: 1.125rem;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -41,12 +43,12 @@
 
 .footer-contact h3,
 .footer-social h3 {
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
 .highlight {
-  color: #ec4899; /* pink-500 */
+  color: #ec4899;
 }
 
 .footer-contact p {
@@ -83,10 +85,10 @@
   background-color: #145dbf;
 }
 
-.social.twitter {
+.social.youtube {
   background-color: #000000;
 }
-.social.twitter:hover {
+.social.youtube:hover {
   background-color: #333333;
 }
 
@@ -97,7 +99,24 @@
   background-color: #db2777;
 }
 
-/* Responsive Layout */
+/* Footer credit aligned */
+.footer-credit {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+}
+
+.footer-credit img {
+  width: 20px;
+  height: auto;
+}
+
+
 @media (min-width: 768px) {
   .footer-bottom {
     flex-direction: row;
@@ -115,4 +134,12 @@
   .footer-mandala img {
     width: 15rem;
   }
+}
+
+/* Fix Mandala to bottom edge */
+.footer-mandala img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }

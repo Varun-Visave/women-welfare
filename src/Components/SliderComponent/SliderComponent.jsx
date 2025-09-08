@@ -9,19 +9,39 @@ import "swiper/css/pagination";
 const ImageSlider = () => {
   const slides = [
     {
-      img: "1.png",
-      title: "First meeting at Shramik, Dadar",
-      info: "First gathering of the MSMP committee in September 2024",
+      img: "We are united in MSMP.png",
+      title: "We are united in MSMP",
+      info: "",
     },
     {
-      img: "2.png",
-      title: "District-level programme on birth anniversary of Krantijyoti Savitribai Phule",
-      info: "Cultural programs, lectures, and workshops were organized across districts",
+      img: "No to Manusmruti Yes to Sanvidhan @ Chiplun.png",
+      title: "No to Manusmruti Yes to Sanvidhan",
+      info: "",
     },
     {
-      img: "3.png",
-      title: "Sukanu Samiti press conference, Mumbai",
-      info: "Press conference held in Mumbai to highlight local issues and the committee’s action plans",
+      img: "Meeting of the district representatives.png",
+      title: "Meeting of the district representatives",
+      info: "",
+    },
+    {
+      img: "MSMP press conference on 26th June.png",
+      title: "MSMP press conference on 26th June",
+      info: "",
+    },
+    {
+      img: "Safety Audit of Chandrapur railway station.png",
+      title: "Safety Audit of Chandrapur railway station",
+      info: "",
+    },
+    {
+      img: "Vidarbh Region meeting.png",
+      title: "Vidarbh Region Meeting",
+      info: "",
+    },
+    {
+      img: "Marathwada region meeting.png",
+      title: "Marathwada region Meeting",
+      info: "",
     },
   ];
 

@@ -5,6 +5,7 @@ import Homepage from "./Components/Homepage/Homepage";
 import NewAboutUs from "./Components/AboutUs.jsx/AboutUs";
 import BlogPage from "./Components/Blogpage/Blogpage";
 import Events from "./Components/Events/Events";
+import ContactUs from "./Components/ContactUs/ContactUs";
 import { useState } from "react";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/about" element={<NewAboutUs />} />
         <Route path="/events" element={<Events />} />
         <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/contactus" element={<ContactUs/>}/>
       </Routes>
 
       <ToggleButtons

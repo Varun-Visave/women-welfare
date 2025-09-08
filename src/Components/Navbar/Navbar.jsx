@@ -31,7 +31,10 @@ const Navbar = ({
     <header className="navbar">
       {/* Top bar */}
       <div className="top-bar">
-        <span className="phone">+91 1800 123 456</span>
+        <span className="phone">Dr. Kunda Pramila Nilakanth: 9969148654</span>
+        <span className="phone">Sangeeta Saraf: 9819230274</span>
+        <span className="phone">Jyoti Mhapasekar: 9867724529</span>
+        <span className="language">Email: streevadiparishad@msmporg.in</span>
         <span className="language">Language</span>
         <div className="social-icons">
           <a href="https://www.facebook.com/profile.php?id=61578878787699">
@@ -105,10 +108,10 @@ const Navbar = ({
               </a>
             </div>
           </div>
-          <a href="#">CONTACT US</a>
-          <a href="#">
+          <a href="contactus  ">CONTACT US</a>
+          {/* <a href="#">
             <i className="fas fa-search"></i>
-          </a>
+          </a> */}
         </nav>
       </div>
 

@@ -10,14 +10,14 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 
-  const CalendarEvents = [
-    { title: "Women Empowerment Workshop", date: "2025-09-10" },
-    {
-      title: "Community Awareness Drive",
-      date: "2025-09-15",
-      color: "#d65a84",
-    },
-  ];
+const CalendarEvents = [
+  { title: "Women Empowerment Workshop", date: "2025-09-10" },
+  {
+    title: "Community Awareness Drive",
+    date: "2025-09-15",
+    color: "#d65a84",
+  },
+];
 
 const events = [
   {
@@ -209,7 +209,6 @@ function BlogSection() {
   );
 }
 
-
 function EventCards() {
   const [expanded, setExpanded] = useState({});
 
@@ -265,9 +264,8 @@ const Homepage = () => {
         inequalities, and building a future rooted in justice and equality.
       </div>
 
-      <LeftTitleSection title={"Calendar And Announcements"}/>
+      <LeftTitleSection title={"Calendar And Announcements"} />
 
-      
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"
@@ -275,9 +273,13 @@ const Homepage = () => {
         height="auto"
       />
       <Impact />
-      <LeftTitleSection title={"Voices In Action"} />
+      <div className="homepage-she-speaks">
+        <LeftTitleSection title={"Voices In Action"} />
+      </div>  
       <EventCards />
-      <RightTitleSection title={"She Speaks"} />
+      <div className="homepage-she-speaks">
+        <RightTitleSection title={"She Speaks"} />
+      </div>
       <BlogSection />
       <Footer />
     </>
