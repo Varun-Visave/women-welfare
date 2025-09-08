@@ -2,6 +2,7 @@ import React from "react";
 import "./Events.css";
 import RightTitleSection from "../RightTitleSection/RightTitleSection";
 import BlogCardLeft from "../blogCardRight/blogCardLeft"; 
+import allData from "../../data/alldata";
 
 const events = [
   {
@@ -116,14 +117,14 @@ const Events = () => {
         <RightTitleSection title={"Our Events"} />
       </div>
       <div className="event-page-container">
-        {events.map((event) => (
+        {allData.map((event) => (
           <BlogCardLeft
             key={event.id}
             title={event.title}
             description={event.description}
             date={event.date}
             readTime={event.readTime}
-            image={event.img}
+            image={event.image}
           />
         ))}
       </div>

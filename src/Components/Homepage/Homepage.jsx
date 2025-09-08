@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import ImageSlider from "../SliderComponent/SliderComponent";
-import Impact from "../Impact/Impact";
-import LeftTitleSection from "../LeftTitleSection/LeftTitleSection";
-import "./Homepage.css";
-import RightTitleSection from "../RightTitleSection/RightTitleSection";
-import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
-import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import FullCalendar from "@fullcalendar/react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Impact from "../Impact/Impact";
+import LeftTitleSection from "../LeftTitleSection/LeftTitleSection";
+import NoticeBoard from "../Notice/Notice";
+import RightTitleSection from "../RightTitleSection/RightTitleSection";
+import ImageSlider from "../SliderComponent/SliderComponent";
+import "./Homepage.css";
 
 const CalendarEvents = [
   { title: "Women Empowerment Workshop", date: "2025-09-10" },
@@ -266,16 +267,25 @@ const Homepage = () => {
 
       <LeftTitleSection title={"Calendar And Announcements"} />
 
-      <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        events={CalendarEvents}
-        height="auto"
-      />
+      {/* Flex container for calendar and notice board */}
+      <div className="calendar-notice-flex">
+        <div className="calendar-wrapper">
+          <FullCalendar
+            plugins={[dayGridPlugin, interactionPlugin]}
+            initialView="dayGridMonth"
+            events={CalendarEvents}
+            height="auto"
+          />
+        </div>
+        <div className="noticeboard-wrapper">
+          <NoticeBoard />
+        </div>
+      </div>
+
       <Impact />
       <div className="homepage-she-speaks">
         <LeftTitleSection title={"Voices In Action"} />
-      </div>  
+      </div>
       <EventCards />
       <div className="homepage-she-speaks">
         <RightTitleSection title={"She Speaks"} />

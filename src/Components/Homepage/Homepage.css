@@ -327,7 +327,41 @@
   font-size: 0.95rem;
 }
 
+.calendar-notice-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.calendar-wrapper,
+.noticeboard-wrapper {
+  flex: 1 1 300px; /* Grow and shrink as needed, with a base width of 300px */
+  max-width: 600px; /* Optional: limit width */
+}
+
+.calendar-wrapper {
+  min-width: 300px;
+}
+
+.noticeboard-wrapper {
+  min-width: 300px;
+}
+
 /* Responsive Adjustments */
+@media (max-width: 900px) {
+  .calendar-notice-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar-wrapper,
+  .noticeboard-wrapper {
+    max-width: 90%;
+    width: 100%;
+  }
+} 
 
 /* Tablets */
 @media (max-width: 1024px) {

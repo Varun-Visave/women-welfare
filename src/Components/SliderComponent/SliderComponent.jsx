@@ -5,8 +5,11 @@ import "./SliderComponent.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useNavigate } from "react-router-dom";
 
 const ImageSlider = () => {
+
+  const navigate = useNavigate();
   const slides = [
     {
       img: "We are united in MSMP.png",
@@ -71,7 +74,9 @@ const ImageSlider = () => {
           </SwiperSlide>
         ))}
       </Swiper>
-      <button className="btn">Get Involved</button>
+      <button className="btn" onClick={() => navigate("/contactus")}>
+        Get Involved
+      </button>
     </div>
   );
 };

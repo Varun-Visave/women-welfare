@@ -2,6 +2,7 @@ import React from "react";
 import BlogCardLeft from "../blogCardRight/blogCardLeft";
 import blogData from "../../data/blogData";
 
+
 const BlogPage = () => {
   return (
     <div className="blog-page-container">
