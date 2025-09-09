@@ -5,23 +5,52 @@ import "./SliderComponent.css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useNavigate, Link } from "react-router-dom";
 
 const ImageSlider = () => {
+  const navigate = useNavigate();
   const slides = [
     {
-      img: "1.png",
-      title: "First meeting at Shramik, Dadar",
-      info: "First gathering of the MSMP committee in September 2024",
+      id: 2,
+      img: "We are united in MSMP.png",
+      title: "We are united in MSMP",
+      info: "",
     },
     {
-      img: "2.png",
-      title: "District-level programme on birth anniversary of Krantijyoti Savitribai Phule",
-      info: "Cultural programs, lectures, and workshops were organized across districts",
+      id: 4,
+      img: "No to Manusmruti Yes to Sanvidhan @ Chiplun.png",
+      title: "No to Manusmruti Yes to Sanvidhan",
+      info: "",
     },
     {
-      img: "3.png",
-      title: "Sukanu Samiti press conference, Mumbai",
-      info: "Press conference held in Mumbai to highlight local issues and the committee’s action plans",
+      id: 8,
+      img: "Meeting of the district representatives.png",
+      title: "Meeting of the district representatives",
+      info: "",
+    },
+    {
+      id: 3,
+      img: "MSMP press conference on 26th June.png",
+      title: "MSMP press conference on 26th June",
+      info: "",
+    },
+    {
+      id: 5,
+      img: "Safety Audit of Chandrapur railway station.png",
+      title: "Safety Audit of Chandrapur railway station",
+      info: "",
+    },
+    {
+      id: 11,
+      img: "Vidarbh Region meeting.png",
+      title: "Vidarbh Region Meeting",
+      info: "",
+    },
+    {
+      id: 10,
+      img: "Marathwada region meeting.png",
+      title: "Marathwada region Meeting",
+      info: "",
     },
   ];
 
@@ -37,23 +66,30 @@ const ImageSlider = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="slide">
-              <img src={slide.img} alt={slide.title} className="slide-image" />
-
-              {/* gradient shadow only on left */}
-              <div className="left-shadow"></div>
-
-              <div className="overlay">
-                <h2>{slide.title}</h2>
-                <p>{slide.info}</p>
+            <Link to={`/event/${slide.id}`} className="read-more">
+              <div className="slide">
+                <img
+                  src={slide.img}
+                  alt={slide.title}
+                  className="slide-image"
+                />
+                <div className="left-shadow"></div>
+                <div className="overlay">
+                  <h2>{slide.title}</h2>
+                  <p>{slide.info}</p>
+                  {/* Read More */}
+                </div>
               </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
-      <button className="btn">Get Involved</button>
+      <button className="btn" onClick={() => navigate("/contactus")}>
+        Get Involved
+      </button>
     </div>
   );
 };
 
 export default ImageSlider;
+

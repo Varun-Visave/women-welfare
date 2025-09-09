@@ -1,126 +1,128 @@
-import React, { useState } from "react";
-import ImageSlider from "../SliderComponent/SliderComponent";
-import Impact from "../Impact/Impact";
-import LeftTitleSection from "../LeftTitleSection/LeftTitleSection";
-import "./Homepage.css";
-import RightTitleSection from "../RightTitleSection/RightTitleSection";
-import Footer from "../Footer/Footer";
-import { Link } from "react-router-dom";
-import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import FullCalendar from "@fullcalendar/react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
+import Impact from "../Impact/Impact";
+import LeftTitleSection from "../LeftTitleSection/LeftTitleSection";
+import NoticeBoard from "../Notice/Notice";
+import RightTitleSection from "../RightTitleSection/RightTitleSection";
+import ImageSlider from "../SliderComponent/SliderComponent";
+import "./Homepage.css";
+import allData from "../../data/alldata";
 
-  const CalendarEvents = [
-    { title: "Women Empowerment Workshop", date: "2025-09-10" },
-    {
-      title: "Community Awareness Drive",
-      date: "2025-09-15",
-      color: "#d65a84",
-    },
-  ];
-
-const events = [
+const CalendarEvents = [
+  { title: "Women Empowerment Workshop", date: "2025-09-10" },
   {
-    id: 1,
-    date: "September 2024",
-    title: "First meeting at Shramik, Dadar",
-    img: "1.png",
-    link: "#",
-    details:
-      "First gathering of the MSMP committee in September 2024, attended by 32 activists from Mumbai. Discussions focused on upcoming social initiatives and coordination strategies.",
+    title: "Community Awareness Drive",
+    date: "2025-09-15",
+    color: "#d65a84",
   },
-  {
-    id: 2,
-    date: "January 2024",
-    title:
-      "District-level programme on birth anniversary of Krantijyoti Savitribai Phule",
-    img: "2.png",
-    link: "#",
-    details:
-      "Cultural programs, lectures, and workshops were organized across districts to celebrate the legacy of Krantijyoti Savitribai Phule, emphasizing women’s empowerment and education reforms.",
-  },
-  {
-    id: 3,
-    date: "March 2024",
-    title: "Sukanu Samiti press conference, Mumbai",
-    img: "3.png",
-    link: "#",
-    details:
-      "Press conference held in Mumbai to highlight local issues and the committee’s action plans. Attended by journalists and social workers.",
-  },
-  {
-    id: 4,
-    date: "19th August 2025",
-    title: "Nagpur Region – Gadchiroli District Workshop",
-    img: "Gadchiroli meeting.png",
-    link: "#",
-    details:
-      "‘Vichar Manthan’ workshop on women’s issues organized by Gadchiroli district MSMP. Senior social worker Sumtibai Munghate was present as chief guest.",
-  },
-  // {
-  //   id: 5,
-  //   date: "8th March 2025",
-  //   title: "Marathwada Region – Parbhani International Women’s Day Program",
-  //   img: "parbhani 8th march program.png",
-  //   link: "#",
-  //   details:
-  //     "A cultural and activist event held in Parbhani on International Women’s Day with wide participation from the community.",
-  // },
-  // {
-  //   id: 6,
-  //   date: "2025",
-  //   title: "Kolhapur Regional Meeting",
-  //   img: "kolhapur team.png",
-  //   link: "#",
-  //   details:
-  //     "Regional workshop and conference of MSMP Kolhapur team, part of the calendar of regional workshops across Maharashtra.",
-  // },
-  // {
-  //   id: 7,
-  //   date: "March – August 2025",
-  //   title: "Campaign: No to Manusmruti, Yes to Samvidhan",
-  //   img: "manusmruti nako banner.png",
-  //   link: "#",
-  //   details:
-  //     "Workshops and discussions across Maharashtra defending constitutional values and resisting Manusmruti ideology. Events held in Mumbai (29 Mar), Chiplun (9 May), Kudal (11 May), Online (8 Jun), Vashi (22 Jul), Majalgaon (3 Aug).",
-  // },
-  // {
-  //   id: 8,
-  //   date: "October 2025",
-  //   title: "Safety Audit of Public Transport Spaces",
-  //   img: "safety audit of ambejogai.png",
-  //   link: "#",
-  //   details:
-  //     "Audits conducted at ST stands, bus depots, and railway stations across Maharashtra. Surveys at Dharashiv, Ambejogai, Pulgaon highlighted gaps in women’s safety. A consolidated report was released in October 2025.",
-  // },
-  // {
-  //   id: 9,
-  //   date: "2025",
-  //   title: "College Campaign",
-  //   img: "college campaign.png",
-  //   link: "#",
-  //   details:
-  //     "Youth campaign with intercollegiate competitions, skits, poster contests, documentaries, and panel discussions on themes like dowry, toxic masculinity, democracy, feminism, superstition, and equality.",
-  // },
-  // {
-  //   id: 10,
-  //   date: "May – July 2025",
-  //   title: "Community Meetings",
-  //   img: "trade union meet.png",
-  //   link: "#",
-  //   details:
-  //     "Online and offline meetings with men’s groups (May 4), queer and trans activists, trade union representatives, and Muslim women activists (July 13). Discussions on gender equality and feminist struggles.",
-  // },
-  // {
-  //   id: 11,
-  //   date: "20–22 December 2025",
-  //   title: "State-Level Conference at Yashwantrao Chavan Pratishthan, Mumbai",
-  //   img: "conference banner.png",
-  //   link: "#",
-  //   details:
-  //     "Grand three-day conference marking the 50th anniversary of International Women’s Year. Resolutions announced and next phase of the feminist movement launched.",
-  // },
 ];
+
+// const events = [
+//   {
+//     id: 1,
+//     date: "September 2024",
+//     title: "First meeting at Shramik, Dadar",
+//     img: "1.png",
+//     link: "#",
+//     details:
+//       "First gathering of the MSMP committee in September 2024, attended by 32 activists from Mumbai. Discussions focused on upcoming social initiatives and coordination strategies.",
+//   },
+//   {
+//     id: 2,
+//     date: "January 2024",
+//     title:
+//       "District-level programme on birth anniversary of Krantijyoti Savitribai Phule",
+//     img: "2.png",
+//     link: "#",
+//     details:
+//       "Cultural programs, lectures, and workshops were organized across districts to celebrate the legacy of Krantijyoti Savitribai Phule, emphasizing women’s empowerment and education reforms.",
+//   },
+//   {
+//     id: 3,
+//     date: "March 2024",
+//     title: "Sukanu Samiti press conference, Mumbai",
+//     img: "3.png",
+//     link: "#",
+//     details:
+//       "Press conference held in Mumbai to highlight local issues and the committee’s action plans. Attended by journalists and social workers.",
+//   },
+//   {
+//     id: 4,
+//     date: "19th August 2025",
+//     title: "Nagpur Region – Gadchiroli District Workshop",
+//     img: "Gadchiroli meeting.png",
+//     link: "#",
+//     details:
+//       "‘Vichar Manthan’ workshop on women’s issues organized by Gadchiroli district MSMP. Senior social worker Sumtibai Munghate was present as chief guest.",
+//   },
+// {
+//   id: 5,
+//   date: "8th March 2025",
+//   title: "Marathwada Region – Parbhani International Women’s Day Program",
+//   img: "parbhani 8th march program.png",
+//   link: "#",
+//   details:
+//     "A cultural and activist event held in Parbhani on International Women’s Day with wide participation from the community.",
+// },
+// {
+//   id: 6,
+//   date: "2025",
+//   title: "Kolhapur Regional Meeting",
+//   img: "kolhapur team.png",
+//   link: "#",
+//   details:
+//     "Regional workshop and conference of MSMP Kolhapur team, part of the calendar of regional workshops across Maharashtra.",
+// },
+// {
+//   id: 7,
+//   date: "March – August 2025",
+//   title: "Campaign: No to Manusmruti, Yes to Samvidhan",
+//   img: "manusmruti nako banner.png",
+//   link: "#",
+//   details:
+//     "Workshops and discussions across Maharashtra defending constitutional values and resisting Manusmruti ideology. Events held in Mumbai (29 Mar), Chiplun (9 May), Kudal (11 May), Online (8 Jun), Vashi (22 Jul), Majalgaon (3 Aug).",
+// },
+// {
+//   id: 8,
+//   date: "October 2025",
+//   title: "Safety Audit of Public Transport Spaces",
+//   img: "safety audit of ambejogai.png",
+//   link: "#",
+//   details:
+//     "Audits conducted at ST stands, bus depots, and railway stations across Maharashtra. Surveys at Dharashiv, Ambejogai, Pulgaon highlighted gaps in women’s safety. A consolidated report was released in October 2025.",
+// },
+// {
+//   id: 9,
+//   date: "2025",
+//   title: "College Campaign",
+//   img: "college campaign.png",
+//   link: "#",
+//   details:
+//     "Youth campaign with intercollegiate competitions, skits, poster contests, documentaries, and panel discussions on themes like dowry, toxic masculinity, democracy, feminism, superstition, and equality.",
+// },
+// {
+//   id: 10,
+//   date: "May – July 2025",
+//   title: "Community Meetings",
+//   img: "trade union meet.png",
+//   link: "#",
+//   details:
+//     "Online and offline meetings with men’s groups (May 4), queer and trans activists, trade union representatives, and Muslim women activists (July 13). Discussions on gender equality and feminist struggles.",
+// },
+// {
+//   id: 11,
+//   date: "20–22 December 2025",
+//   title: "State-Level Conference at Yashwantrao Chavan Pratishthan, Mumbai",
+//   img: "conference banner.png",
+//   link: "#",
+//   details:
+//     "Grand three-day conference marking the 50th anniversary of International Women’s Year. Resolutions announced and next phase of the feminist movement launched.",
+// },
+// ];
 
 const blogData = [
   {
@@ -209,7 +211,6 @@ function BlogSection() {
   );
 }
 
-
 function EventCards() {
   const [expanded, setExpanded] = useState({});
 
@@ -220,14 +221,16 @@ function EventCards() {
     }));
   };
 
+  const displayedEvents = allData.slice(0, 4);
+
   return (
     <>
       <div className="events-container">
-        {events.map((event) => (
+        {displayedEvents.map((event) => (
           <div className="event-card" key={event.id}>
             <div className="event-date">{event.date}</div>
             <div className="event-content">
-              <img src={event.img} alt={event.title} className="event-image" />
+              <img src={event.image} alt={event.title} className="event-image" />
               <div className="event-text">
                 <p>{event.title}</p>
 
@@ -265,19 +268,31 @@ const Homepage = () => {
         inequalities, and building a future rooted in justice and equality.
       </div>
 
-      <LeftTitleSection title={"Calendar And Announcements"}/>
+      <LeftTitleSection title={"Calendar And Announcements"} />
 
-      
-      <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        events={CalendarEvents}
-        height="auto"
-      />
+      {/* Flex container for calendar and notice board */}
+      <div className="calendar-notice-flex">
+        <div className="calendar-wrapper">
+          <FullCalendar
+            plugins={[dayGridPlugin, interactionPlugin]}
+            initialView="dayGridMonth"
+            events={CalendarEvents}
+            height="auto"
+          />
+        </div>
+        <div className="noticeboard-wrapper">
+          <NoticeBoard />
+        </div>
+      </div>
+
       <Impact />
-      <LeftTitleSection title={"Voices In Action"} />
+      <div className="homepage-she-speaks">
+        <LeftTitleSection title={"Voices In Action"} />
+      </div>
       <EventCards />
-      <RightTitleSection title={"She Speaks"} />
+      <div className="homepage-she-speaks">
+        <RightTitleSection title={"She Speaks"} />
+      </div>
       <BlogSection />
       <Footer />
     </>

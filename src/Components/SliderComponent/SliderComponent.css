@@ -45,12 +45,12 @@
   color: white;
   padding: 16px;
   border-radius: 8px;
-  z-index: 2;
+  z-index: 5;
   max-width: 80%;
 }
 
 .overlay h2 {
-  font-size: clamp(1.5rem, 2.5vw, 2.8rem); /* scales with screen */
+  font-size: clamp(1.5rem, 2.5vw, 2.8rem);
   font-family: "Inclusive Sans", sans-serif;
   margin: 0 0 8px 0;
 }

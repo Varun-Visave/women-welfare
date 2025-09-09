@@ -1,6 +1,5 @@
 import React from "react";
 import "./AboutUs.css";
-import groupPhoto from "../../assets/group-photo.png";
 import logo from "../../assets/logo.png";
 import placeholderAvtar from "../../assets/placeholder.png";
 import RightTitleSection from "../RightTitleSection/RightTitleSection";
@@ -29,7 +28,7 @@ const AboutUsSection = () => {
             </p>
           </div>
           <div className="aboutus-img">
-            <img src={groupPhoto} alt="Group Photo" />
+            <img src="/We are united in MSMP.png" alt="Group Photo" />
           </div>
         </div>
 
@@ -171,29 +170,7 @@ const TheWaySection = () => {
 };
 
 
-// ------------------- Join Us Section -------------------
-const JoinUsSection = () => {
-  return (
-    <section className="contact-section">
-      <h2 className="contact-title">Join Us</h2>
-      <form className="contact-form" onSubmit={e => { e.preventDefault(); alert('Thank you for your interest in joining us!'); }}>
-        <div className="contact-form-group">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div className="contact-form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div className="contact-form-group">
-          <label htmlFor="message">Message</label>
-          <textarea id="message" name="message" rows="4"></textarea>
-        </div>
-        <button type="submit" className="contact-submit">Join</button>
-      </form>
-    </section>
-  );
-};
+
 
 // ------------------- Main Page -------------------
 const NewAboutUs = () => {
@@ -204,7 +181,7 @@ const NewAboutUs = () => {
       <PurposeInMotionSection />
       <OurObjectivesSection />
       <TheWaySection />
-  <JoinUsSection />
+  {/* <JoinUsSection /> */}
       <Footer/>
     </main>
   );

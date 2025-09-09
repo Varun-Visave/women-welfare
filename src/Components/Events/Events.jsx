@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Events.css";
-import RightTitleSection from "../../Components/RightTitleSection/RightTitleSection";
+import RightTitleSection from "../RightTitleSection/RightTitleSection";
+import BlogCardLeft from "../blogCardRight/blogCardLeft";
+import allData from "../../data/alldata";
+import Footer from "../Footer/Footer";
 
 const events = [
   {
@@ -108,48 +111,28 @@ const events = [
   },
 ];
 
-function Events() {
-  const [expanded, setExpanded] = useState({});
-
-  const toggleExpand = (id) => {
-    setExpanded((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
+const Events = () => {
   return (
     <>
       <div className="event-title">
         <RightTitleSection title={"Our Events"} />
       </div>
       <div className="event-page-container">
-        {/* <h1 className='event-page-heading'>Our <span className='pink'>Events</span></h1>  */}
-
-        {events.map((event) => (
-          <div className="event-page-card" key={event.id}>
-            <div className="event-date">{event.date}</div>
-            <div className="event-content">
-              <img src={event.img} alt={event.title} className="event-image" />
-              <div className="event-text">
-                <p>{event.title}</p>
-
-                {expanded[event.id] && (
-                  <p className="event-details">{event.details}</p>
-                )}
-
-                <button
-                  className="event-link"
-                  onClick={() => toggleExpand(event.id)}
-                >
-                  {expanded[event.id] ? "less info..." : "more info..."}
-                </button>
-              </div>
-            </div>
-          </div>
+        {allData.map((event) => (
+          <BlogCardLeft
+            key={event.id}
+            id={event.id}
+            title={event.title}
+            description={event.description}
+            date={event.date}
+            readTime={event.readTime}
+            image={event.image}
+          />
         ))}
       </div>
+      <Footer />
     </>
   );
-}
+};
 
 export default Events;

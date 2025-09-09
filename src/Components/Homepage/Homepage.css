@@ -1,12 +1,13 @@
+/* Events Section */
 .events-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 1.5rem; /* row aur column ke beech ka gap */
+  gap: 1.5rem; /* space between rows and columns */
   margin: 2rem auto;
   max-width: 90vw;
+  width: 100%;
   z-index: 500;
 }
-
 
 .event-card {
   background: #fff;
@@ -34,14 +35,14 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+  flex-direction: row; /* default layout */
 }
 
 .event-image {
   width: 350px;
   height: 350px;
   border-radius: 8px;
-  border-color: black;
-  border-width: 1px;
+  border: 1px solid black;
   object-fit: cover;
 }
 
@@ -81,30 +82,31 @@
   text-decoration: underline;
 }
 
-.more-events-btn{
-  background-color:#ff4081;
+.more-events-btn,
+.more-blogs-btn {
+  background-color: #ff4081;
   border-radius: 50px;
   padding: 10px 50px;
   color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
-  margin-bottom: 40px;
+  margin: 40px;
 }
 
-.more-events-btn:hover{
+.more-events-btn:hover {
   background-color: #e63670;
   transition: 0.15s;
   cursor: pointer;
 }
 
-
-.btn-container{
+.btn-container {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 
+/* Blog Section */
 .blog-card {
   width: 320px;
   background: #fff;
@@ -160,6 +162,10 @@
   background: #e63670;
 }
 
+.homepage-she-speaks .title-section {
+  z-index: -1;
+}
+
 .blog-section {
   display: flex;
   gap: 1.5rem;
@@ -168,6 +174,30 @@
   margin-top: 2rem;
 }
 
+.blog-section-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 50vw;
+  width: 100%;
+  justify-content: center;
+}
+
+.blog-section-grid .blog-card {
+  width: 45vw;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.blog-section-grid .blog-card:hover {
+  transform: translateY(-4px);
+}
+
+/* About Section */
 .about-intro {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
@@ -180,8 +210,7 @@
   padding: 0 1rem;
 }
 
-
-/* Full Calendar Container */
+/* Calendar Section */
 .fc {
   max-width: 1000px;
   margin: 2rem auto;
@@ -192,7 +221,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* Calendar Header */
 .fc-toolbar.fc-header-toolbar {
   display: flex;
   flex-wrap: wrap;
@@ -230,12 +258,10 @@
   box-shadow: 0 0 0 3px rgba(217, 76, 122, 0.3);
 }
 
-/* View switcher buttons */
 .fc-button-group {
   margin-top: 0.5rem;
 }
 
-/* Weekday header */
 .fc-col-header-cell {
   background-color: #faf9f8;
   color: #555;
@@ -244,7 +270,6 @@
   border-bottom: 2px solid #eee;
 }
 
-/* Day cells */
 .fc-daygrid-day {
   padding: 0.75rem;
   border: 1px solid #eee;
@@ -275,17 +300,15 @@
   background-color: #eb6893;
 }
 
-/* Today’s date highlight */
 .fc-day-today {
   background-color: #fff0f5;
   border: 2px solid #d94c7a;
 }
 
-/* Event popover */
 .fc-popover {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   font-family: "Poppins", sans-serif;
   color: #333;
 }
@@ -304,8 +327,89 @@
   font-size: 0.95rem;
 }
 
-/* Responsive adjustments */
+.calendar-notice-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.calendar-wrapper,
+.noticeboard-wrapper {
+  flex: 1 1 300px; /* Grow and shrink as needed, with a base width of 300px */
+  max-width: 600px; /* Optional: limit width */
+}
+
+.calendar-wrapper {
+  min-width: 300px;
+}
+
+.noticeboard-wrapper {
+  min-width: 300px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .calendar-notice-flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calendar-wrapper,
+  .noticeboard-wrapper {
+    max-width: 90%;
+    width: 100%;
+  }
+} 
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .events-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90vw;
+  }
+
+  .event-image {
+    max-width: 300px;
+  }
+}
+
+/* Phones – Single Column & Stack Image on Top */
 @media (max-width: 768px) {
+  .events-container {
+    grid-template-columns: 1fr;
+    max-width: 95vw;
+  }
+
+  .event-content {
+    flex-direction: column; /* stack image on top */
+    align-items: center;
+    text-align: center;
+  }
+
+  .event-image {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .event-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .event-text p {
+    font-size: 0.95rem;
+  }
+
+  .event-details {
+    font-size: 0.85rem;
+  }
+
+  .event-link {
+    font-size: 0.85rem;
+  }
+
   .fc-toolbar-title {
     font-size: 1.5rem;
   }
@@ -321,7 +425,20 @@
   }
 }
 
+/* Smaller Phones */
 @media (max-width: 480px) {
+  .event-text p {
+    font-size: 0.9rem;
+  }
+
+  .event-details {
+    font-size: 0.8rem;
+  }
+
+  .event-link {
+    font-size: 0.8rem;
+  }
+
   .fc-toolbar-title {
     font-size: 1.25rem;
   }
@@ -333,91 +450,9 @@
   .fc-daygrid-event {
     font-size: 0.7rem;
   }
-}
-/* Blog Section Grid for 2 columns */
-.blog-section-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 2rem auto;
-  width: 50vw;
-  justify-content: center;
-}
 
-/* More Blogs Button Styling */
-.more-blogs-btn {
-  background-color: #ff4081;
-  border-radius: 50px;
-  padding: 10px 50px;
-  color: white;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin-bottom: 40px;
-  text-decoration: none;
-  transition: background-color 0.15s ease;
-}
-
-.more-blogs-btn:hover {
-  background-color: #e63670;
-  cursor: pointer;
-}
-
-/* Blog Section Grid for 2 columns occupying 75% of viewport width */
-.blog-section-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 2rem auto;
-  max-width: 50vw; /* limit the grid width */
-  width: 100%;
-  justify-content: center;
-}
-
-/* Adjust cards to fit nicely within the grid */
-
-.blog-section-grid  .blog-card {
-  width: 45vw; /* take full width of grid cell */
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease-in-out;
-}
-
-.blog-card:hover {
-  transform: translateY(-4px);
-}
-
-.blog-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.blog-content {
-  padding: 1rem;
-}
-
-.blog-content h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.blog-content p {
-  font-size: 0.95rem;
-  color: #444;
-  margin: 1em;
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
   .blog-section-grid {
     grid-template-columns: 1fr;
-    max-width: 50vw;
+    max-width: 90vw;
   }
 }
-
-
-
