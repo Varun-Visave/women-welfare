@@ -77,7 +77,15 @@ const Navbar = ({
             <a href="/about">ABOUT US</a>
           </div>
           <a href="/events">EVENTS</a>
-          <a href="/blogs">BLOG</a>
+          {/* <a href="/blogs">BLOG</a> */}
+          <div className="dropdown">
+            <a href="#">
+              BLOG ▾
+              <div className="dropdown-content">
+                <a href="#">Page Is Under Development !</a>
+              </div>
+            </a>
+          </div>
 
           <div className="dropdown">
             <a href="#">DOCUMENTATION ▾</a>
@@ -94,7 +102,7 @@ const Navbar = ({
                   setShowNotice(true);
                 }}
               >
-                Notice
+                Latest Announcement
               </a>
 
               <a
@@ -144,7 +152,7 @@ const Navbar = ({
             >
               ✕
             </button>
-            <h1 className="notice-modal-heading">Notices</h1>
+            <h1 className="notice-modal-heading">Announcements</h1>
 
             <div className="scrollable">
               <div className="notice">

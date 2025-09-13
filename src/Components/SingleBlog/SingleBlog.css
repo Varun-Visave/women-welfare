@@ -25,6 +25,8 @@
 
 .blog-description {
   margin-bottom: 5em;
+  white-space: pre-line;
+  text-align: justify;
 }
 
 @media (max-width: 600px) {

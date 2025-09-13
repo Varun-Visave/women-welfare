@@ -28,7 +28,7 @@ const SingleBlog = () => {
           src={`/${blog.image}`}
           alt={blog.title}
         />
-        <p className="blog-description">{blog.description}</p>
+  <p className="blog-description" dangerouslySetInnerHTML={{ __html: blog.description.replace(/\n/g, '<br/>') }} />
       </div>
       <Footer />
     </>

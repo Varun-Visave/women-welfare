@@ -62,8 +62,8 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-credit">
-          <img src="meshcraft.png" alt="Meshcraft" />
-          <small>made by Meshcraft</small>
+          <img src="MESH.png" alt="Meshcraft" />
+          <span>made by Meshcraft</span> @2025
         </div>
       </div>
     </footer>

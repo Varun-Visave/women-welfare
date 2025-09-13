@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "godofwar";
+  src: url(../../assets/GODOFWAR.TTF) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .footer {
   background-color: white;
   border-top: 1px solid #e5e7eb;
@@ -54,6 +61,7 @@
 .footer-contact p {
   margin-top: 0.5rem;
   font-size: 0.95rem;
+  font-weight: 600;
 }
 
 .footer-mandala img {
@@ -109,13 +117,18 @@
   font-size: 0.9rem;
   color: rgba(0, 0, 0, 0.9);
   margin-top: 1rem;
+  font-weight: bolder;
 }
+.footer-credit span{
+  font-family: 'godofwar';
+  font-weight: normal;
+}
+
 
 .footer-credit img {
-  width: 20px;
+  width: 60px;
   height: auto;
 }
-
 
 @media (min-width: 768px) {
   .footer-bottom {

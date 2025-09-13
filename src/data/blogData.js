@@ -5,7 +5,7 @@ const allData = [
     title: "About MSMP & 50 Years of Women's Movement",
     description:
       "The year 2025 marks the 50th anniversary of the United Nations' declaration of International Women's Year in 1975. To evaluate the progress in women's lives over these five decades, activists and organizations involved in the autonomous women's movement since 1975, along with those active in earlier movements, have collaborated to establish the Maharashtra Stree Mukti Parishad: for the feminist’s transformation of society – a feminist platform. This platform plans to host various activities throughout the year, culminating in a state-level conference in Mumbai on December 20th, 21st, and 22nd, 2025. This conference is envisioned as the launchpad for the next phase of the movement.",
-    image: "logo.png",
+    image: "logo2.png",
   date: "Dec 20-22, 2025",
   },
   {

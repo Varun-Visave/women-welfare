@@ -17,8 +17,6 @@ const AboutUsSection = () => {
             <p>
               2025 marks 50 years of declaration of the international women's
               year by the UN in 1975.
-            </p>
-            <p>
               To assess the changes in women's lives through these 50 years, the
               activists and organisations who have been involved in organizing
               the autonomous women's movement since 1975, and the organizations
@@ -40,17 +38,11 @@ const AboutUsSection = () => {
             <p>
               This platform proposes to organise several activities through the
               year.
-            </p>
-            <p>
               To be concluded with a state level Conference, the Maharashtra
               Stree Mukti Parishad, to be held in Mumbai on 20th, 21st and 22nd
               December, 2025.
-            </p>
-            <p>
               The conference is seen as the beginning of the next phase of the
               movement.
-            </p>
-            <p>
               Resolutions to that effect will be announced. The future plans of
               the Parishad will also be announced.
             </p>
